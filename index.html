@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKapi.pro - Automate Your Skool Community Management</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236D28D9'/><text x='50%25' y='50%25' font-family='ui-sans-serif, system-ui, -apple-system, sans-serif' font-size='18' font-weight='900' fill='%23F4F4F0' text-anchor='middle' dy='.3em' transform='rotate(-5 16 16)'>SK</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0NSGLNLR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QB0NSGLNLR');
+
+      // Default consent mode
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted'
+      });
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3062462557296405');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3062462557296405&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        :root {
+            /* Colors */
+            --c-bg: #F4F4F0;
+            --c-surface: #FFFFFF;
+            --c-surface-2: #EFEFE8;
+            --c-ink: #0A0A0A;
+            --c-ink-2: #1A1A1A;
+            --c-border: #0A0A0A;
+            --c-shadow: rgba(10,10,10,.15);
+            --c-accent: #6D28D9;
+            --c-accent-2: #A5B4FC;
+            --c-warn: #FBBF24;
+
+            /* Typography */
+            --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+            --fs-body: 17px;
+            --lh-body: 1.6;
+
+            /* Spacing */
+            --sp-1: 4px;
+            --sp-2: 8px;
+            --sp-3: 12px;
+            --sp-4: 16px;
+            --sp-5: 20px;
+            --sp-6: 24px;
+            --sp-8: 32px;
+            --sp-10: 40px;
+            --sp-12: 48px;
+            --sp-16: 64px;
+            --sp-20: 80px;
+            --sp-24: 96px;
+
+            /* Radius */
+            --r-sm: 10px;
+            --r-md: 14px;
+            --r-lg: 18px;
+            --r-xl: 24px;
+            --r-pill: 999px;
+
+            /* Borders & Shadows */
+            --b-1: 1px;
+            --shadow-soft: 0 1px 0 rgba(0,0,0,.06);
+            --shadow-hover: 0 10px 0 rgba(0,0,0,.10);
+
+            /* Motion */
+            --t-fast: .14s;
+            --e-out: cubic-bezier(.2,.8,.2,1);
+
+            /* Layout */
+            --container: 1160px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--fs-body);
+            line-height: var(--lh-body);
+            color: var(--c-ink);
+            background: var(--c-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            margin: 0;
+            letter-spacing: -0.02em;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: clamp(48px, 6vw, 88px);
+            font-weight: 900;
+            line-height: 1.0;
+            letter-spacing: -0.03em;
+        }
+
+        h2 {
+            font-size: clamp(28px, 3vw, 44px);
+            line-height: 1.05;
+            letter-spacing: -0.02em;
+        }
+
+        h3 {
+            font-size: 22px;
+            line-height: 1.15;
+            font-weight: 800;
+        }
+
+        p {
+            margin: 0;
+            color: var(--c-ink-2);
+        }
+
+        .section {
+            padding: 96px 0;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 64px 0;
+            }
+        }
+
+        /* Navigation */
+        .nav {
+            height: 64px;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            background: color-mix(in srgb, var(--c-bg) 92%, transparent);
+            border-bottom: var(--b-1) solid var(--c-border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--c-ink);
+        }
+
+        .logo span {
+            color: var(--c-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--c-ink);
+            transition: color var(--t-fast) var(--e-out);
+        }
+
+        .nav-links a:hover {
+            color: var(--c-accent);
+        }
+
+        /* Buttons */
+        .button {
+            border: var(--b-1) solid var(--c-border);
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-weight: 800;
+            line-height: 1;
+            display: inline-flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            transform: translateY(0);
+            transition: transform .14s ease, box-shadow .14s ease, background-color .14s ease;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 0 rgba(0,0,0,.10);
+        }
+
+        .button:active {
+            transform: translateY(1px);
+            box-shadow: 0 4px 0 rgba(0,0,0,.08);
+        }
+
+        .button--primary {
+            background: var(--c-accent);
+            color: #FFFFFF;
+        }
+        
+        .button--primary:hover {
+            background: color-mix(in srgb, var(--c-accent) 90%, #000);
+        }
+
+        .button--secondary {
+            background: var(--c-surface);
+            color: var(--c-ink);
+        }
+
+        .button--large {
+            padding: 14px 28px;
+            font-size: 17px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0 96px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 64px 0 48px;
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--c-ink-2);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Decorative gradient orbs */
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(40px, -30px) scale(1.05); }
+            50% { transform: translate(20px, -60px) scale(1.1); }
+            75% { transform: translate(-20px, -30px) scale(1.05); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-50px, 20px) scale(1.08); }
+            50% { transform: translate(-80px, -20px) scale(1.12); }
+            75% { transform: translate(-30px, -40px) scale(1.05); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, 40px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(1.05); }
+        }
+
+        @keyframes float4 {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(60px, -20px) scale(1.05); }
+            50% { transform: translate(30px, 30px) scale(1.1); }
+            75% { transform: translate(-40px, 10px) scale(1.05); }
+        }
+
+        .orb-1 {
+            top: -100px;
+            left: -50px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--c-accent) 0%, transparent 70%);
+            animation: float1 12s ease-in-out infinite;
+        }
+
+        .orb-2 {
+            top: 100px;
+            right: -100px;
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, var(--c-accent-2) 0%, transparent 70%);
+            animation: float2 14s ease-in-out infinite;
+        }
+
+        .orb-3 {
+            bottom: -50px;
+            left: 20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--c-warn) 0%, transparent 70%);
+            animation: float3 10s ease-in-out infinite;
+        }
+
+        .orb-4 {
+            bottom: 100px;
+            right: 20%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, var(--c-accent) 0%, transparent 70%);
+            animation: float4 13s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .gradient-orb {
+                display: none;
+            }
+        }
+
+        /* Cards */
+        .card {
+            background: var(--c-surface);
+            border: var(--b-1) solid var(--c-border);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+            transition: transform var(--t-fast) var(--e-out), box-shadow var(--t-fast) var(--e-out);
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Comparison Section */
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .comparison-card {
+            padding: 32px;
+        }
+
+        .comparison-header {
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: var(--b-1) solid var(--c-border);
+        }
+
+        .comparison-header h3 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 14px 0;
+            padding-left: 40px;
+            position: relative;
+            font-size: 16px;
+            border-bottom: var(--b-1) dashed var(--c-border);
+        }
+
+        .comparison-list li:last-child {
+            border-bottom: none;
+        }
+
+        .comparison-list li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--c-ink);
+            font-weight: 700;
+        }
+
+        .comparison-card.after .comparison-list li::before {
+            content: '✓';
+        }
+
+        /* Features Section */
+        .features-section {
+            background: var(--c-surface-2);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            padding: 28px;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--c-accent-2);
+            border: var(--b-1) solid var(--c-border);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--c-accent);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: var(--c-warn);
+            color: var(--c-ink);
+            padding: 6px 14px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: var(--r-pill);
+            border: var(--b-1) solid var(--c-border);
+            box-shadow: var(--shadow-soft);
+            margin-left: 8px;
+        }
+
+        /* Coming Soon Badge */
+        .coming-soon-badge {
+            display: inline-block;
+            background: var(--c-accent-2);
+            color: var(--c-ink);
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 700;
+            border-radius: 6px;
+            border: var(--b-1) solid var(--c-border);
+            margin-left: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            padding: 28px;
+        }
+
+        .testimonial-quote {
+            position: relative;
+            padding-left: 48px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -8px;
+            font-size: 48px;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--c-accent);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--c-accent-2);
+            border: var(--b-1) solid var(--c-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 20px;
+            color: var(--c-accent);
+        }
+
+        .testimonial-avatar i {
+            font-size: 24px;
+        }
+
+        .testimonial-name {
+            font-weight: 800;
+            font-size: 16px;
+        }
+
+        .testimonial-role {
+            font-size: 14px;
+            color: var(--c-ink-2);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 12px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .email-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 14px 20px;
+            font-family: var(--font-sans);
+            font-size: 16px;
+            border: var(--b-1) solid var(--c-border);
+            border-radius: 12px;
+            background: var(--c-surface);
+            color: var(--c-ink);
+            outline: none;
+            transition: border-color var(--t-fast) var(--e-out), box-shadow var(--t-fast) var(--e-out);
+        }
+
+        .email-form input:focus {
+            border-color: var(--c-accent);
+            box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.2);
+        }
+
+        .email-form input::placeholder {
+            color: var(--c-ink-2);
+            opacity: 0.6;
+        }
+
+        .form-success {
+            background: var(--c-surface);
+            border: 1px solid var(--c-border);
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .form-success h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+            color: var(--c-accent);
+        }
+        .form-success p {
+            font-size: 16px;
+        }
+        .form-success p strong {
+            font-weight: 800;
+            color: var(--c-ink);
+        }
+
+        /* Categories / Tags */
+        .categories-section {
+            background: var(--c-surface-2);
+        }
+
+        .categories-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .category-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: var(--c-surface);
+            border: var(--b-1) solid var(--c-border);
+            border-radius: var(--r-pill);
+            font-weight: 700;
+            font-size: 14px;
+            transition: all var(--t-fast) var(--e-out);
+            cursor: default;
+        }
+
+        .category-chip:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .category-chip i {
+            font-size: 16px;
+        }
+
+        .chip-automation i { color: var(--c-accent); }
+        .chip-ai i { color: var(--c-accent-2); }
+        .chip-integration i { color: var(--c-warn); }
+        .chip-messaging i { color: #FF6B6B; }
+        .chip-comments i { color: #4ECDC4; }
+        .chip-workflow i { color: #A78BFA; }
+
+        /* Footer */
+        footer {
+            background: var(--c-ink);
+            color: var(--c-bg);
+            padding: 48px 0;
+            border-top: var(--b-1) solid var(--c-border);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 48px;
+            margin-bottom: 48px;
+            align-items: start;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .footer-links {
+                align-items: flex-start;
+            }
+        }
+
+        .footer-logo {
+            font-size: 32px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .footer-logo span {
+            color: var(--c-accent);
+        }
+
+        footer p {
+            color: #FFFFFF !important;
+            opacity: 1;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        .footer-links a {
+            color: var(--c-bg);
+            text-decoration: none;
+            font-weight: 600;
+            opacity: 0.8;
+            transition: opacity var(--t-fast) var(--e-out);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,.1);
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.6;
+        }
+
+        /* Animations */
+        .animate-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Consent Banner */
+        #consent-banner {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: var(--c-ink);
+            color: var(--c-bg);
+            padding: 24px;
+            display: none; /* Hidden by default, shown by JS */
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            z-index: 2000;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #consent-banner p {
+            color: var(--c-bg);
+            opacity: 0.9;
+            margin: 0;
+            max-width: 600px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .consent-buttons {
+            display: flex;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        #consent-banner .button--secondary {
+            background: #333;
+            color: #fff;
+            border-color: #444;
+        }
+        #consent-banner .button--secondary:hover {
+            background: #444;
+        }
+
+        #loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--c-accent);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-bar"></div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <a href="#" class="logo">SKapi<span>.pro</span></a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="mailto:connect@skapi.pro">Contact</a>
+            </div>
+            <a href="#cta" class="button button--primary">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="gradient-orb orb-4"></div>
+
+        <div class="container hero-content">
+            <h1 class="animate-in">Connect Skool to Make.com and n8n in One Click</h1>
+            <p class="hero-subtitle animate-in delay-1">Free automation, limitless possibilities.</p>
+            <p style="font-size: 14px; color: var(--c-ink-2); opacity: 0.7; margin-bottom: 32px;" class="animate-in delay-1">
+                <i class="fas fa-info-circle"></i> Powered by a custom, independent API. Not affiliated with Skool.
+            </p>
+            <div class="hero-cta animate-in delay-2">
+                <a href="#cta" class="button button--primary button--large">
+                    Join Waitlist
+                </a>
+                <a href="#features" class="button button--secondary button--large">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header animate-in">
+                <h2>The transformation</h2>
+                <p>See what changes when you automate your Skool community</p>
+            </div>
+
+            <div class="comparison-grid">
+                <div class="card comparison-card animate-in delay-1">
+                    <div class="comparison-header">
+                        <h3>Before 😰</h3>
+                        <p>The old way of managing communities</p>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Manual member approvals eating up your time</li>
+                        <li>Hours spent crafting individual messages</li>
+                        <li>Struggling to maintain personalized engagement</li>
+                        <li>Complex permission management headaches</li>
+                        <li>Repetitive tasks draining your energy</li>
+                    </ul>
+                </div>
+
+                <div class="card comparison-card after animate-in delay-2">
+                    <div class="comparison-header">
+                        <h3>After 🎉</h3>
+                        <p>Work smarter, not harder</p>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Automatic member screening and approval based on criteria</li>
+                        <li>AI-powered application review using GPT and Claude</li>
+                        <li>Automated class access based on member achievements</li>
+                        <li>Automated personalized messages using AI</li>
+                        <li>Automatic comments and replies</li>
+                        <li>Bulk permission updates <span class="coming-soon-badge">Coming Soon</span></li>
+                        <li>Bulk Messages to thousands <span class="coming-soon-badge">Coming Soon</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features-section" id="features">
+        <div class="container">
+            <div class="section-header animate-in">
+                <h2>Powerful features</h2>
+                <p>Everything you need to automate your Skool community</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="card feature-card animate-in delay-1">
+                    <div class="feature-icon">
+                        <img src="make-color.webp" alt="Make.com logo" style="width: 36px; height: 36px; object-fit: contain;">
+                    </div>
+                    <h3>Make.com Integration</h3>
+                    <p>First-ever Make.com integration for Skool. Connect your community workflows with 1000+ apps seamlessly.</p>
+                </div>
+
+                <div class="card feature-card animate-in delay-2">
+                    <div class="feature-icon">
+                        <img src="n8n-color.webp" alt="n8n logo" style="width: 36px; height: 36px; object-fit: contain;">
+                    </div>
+                    <h3>n8n Integration</h3>
+                    <p>Powerful workflow automation with n8n. Create custom integrations and automate complex tasks with visual workflows.</p>
+                </div>
+
+                <div class="card feature-card animate-in delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Zero Coding Required</h3>
+                    <p>Handy setup with simple point-and-click interface. No technical skills needed — just plug and play.</p>
+                </div>
+
+                <div class="card feature-card animate-in delay-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <h3>Mass Messaging</h3>
+                    <p>Send messages to thousands of members in one click. Personalize at scale without the manual effort.</p>
+                </div>
+
+                <div class="card feature-card animate-in delay-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Automation</h3>
+                    <p>Leverage AI to automatically moderate content, suggest responses, and engage with your community 24/7.</p>
+                </div>
+
+                <div class="card feature-card animate-in delay-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community-Driven Development</h3>
+                    <p>We build features based on your requests. <a href="https://www.skool.com/ai-pays-my-bills-7018/about" target="_blank" rel="noopener" style="color: var(--c-accent); font-weight: 700; text-decoration: underline;">Join our community</a>, suggest ideas, and help shape the future of Skool automation.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 48px;" class="animate-in delay-5">
+                <p style="font-size: 18px; color: var(--c-ink-2); font-weight: 600;">
+                    🚀 And much more coming soon...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-in">
+                <h2>Loved by community managers</h2>
+                <p>See what early users are saying about SKapi</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="card testimonial-card animate-in delay-1">
+                    <div class="testimonial-quote">
+                        <p>SKapi saved me 3+ hours daily. I can finally focus on creating content instead of repetitive admin tasks.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div>
+                            <div class="testimonial-name">Sarah K.</div>
+                            <div class="testimonial-role">Community Manager, 5K members</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card testimonial-card animate-in delay-2">
+                    <div class="testimonial-quote">
+                        <p>The AI-powered comments are incredible. My members think I'm online 24/7, but it's all automated!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div>
+                            <div class="testimonial-name">Mike J.</div>
+                            <div class="testimonial-role">Course Creator, 10K+ students</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card testimonial-card animate-in delay-3">
+                    <div class="testimonial-quote">
+                        <p>Make.com integration is a game changer. Connected Skool to my entire tech stack in minutes.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div>
+                            <div class="testimonial-name">Alex L.</div>
+                            <div class="testimonial-role">Tech Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card testimonial-card animate-in delay-4">
+                    <div class="testimonial-quote">
+                        <p>Finally, automation for Skool! This should have existed years ago. Can't imagine managing without it now.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar"><i class="fas fa-user-circle"></i></div>
+                        <div>
+                            <div class="testimonial-name">Emma R.</div>
+                            <div class="testimonial-role">Community Builder</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content animate-in">
+                <h2>Ready to automate your community?</h2>
+                <p>Join the waitlist for early access and be among the first to transform your Skool workflow.</p>
+                <form class="email-form">
+                    <input type="email" name="email" id="email-input" placeholder="Enter your email" required>
+                    <button type="submit" class="button button--primary button--large">
+                        <i class="fas fa-arrow-right"></i>
+                        Join Waitlist
+                    </button>
+                </form>
+                <p style="margin-top: 24px; font-size: 15px;">
+                    Questions? Email us at <a href="mailto:connect@skapi.pro" style="color: var(--c-accent); font-weight: 700;">connect@skapi.pro</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consent Banner -->
+    <div id="consent-banner">
+        <p>We use cookies to analyze site performance and enhance your experience. By clicking “Accept”, you agree to our use of cookies for analytics.</p>
+        <div class="consent-buttons">
+            <button id="consent-accept" class="button button--primary">Accept</button>
+            <button id="consent-decline" class="button button--secondary">Decline</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">SKapi<span>.pro</span></div>
+                    <p>The first automation platform for Skool communities. Save time, engage more, grow faster.</p>
+                </div>
+                <div>
+                    <div class="footer-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="mailto:connect@skapi.pro">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SKapi.pro — Automate Your Community</p>
+                <p style="font-size: 13px; margin-top: 8px; opacity: 0.7;">SKapi is a custom API and is not affiliated with, endorsed by, or sponsored by Skool.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js" defer></script>
+</body>
+</html>

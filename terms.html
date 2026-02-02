@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SKapi.pro</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%236D28D9'/><text x='50%25' y='50%25' font-family='ui-sans-serif, system-ui, -apple-system, sans-serif' font-size='18' font-weight='900' fill='%23F4F4F0' text-anchor='middle' dy='.3em' transform='rotate(-5 16 16)'>SK</text></svg>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0NSGLNLR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QB0NSGLNLR');
+
+      // Default consent mode
+      gtag('consent', 'default', {
+        'analytics_storage': 'granted',
+        'ad_storage': 'granted'
+      });
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '3062462557296405');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=3062462557296405&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        :root {
+            --c-bg: #F4F4F0;
+            --c-surface: #FFFFFF;
+            --c-surface-2: #EFEFE8;
+            --c-ink: #0A0A0A;
+            --c-ink-2: #1A1A1A;
+            --c-border: #0A0A0A;
+            --c-shadow: rgba(10,10,10,.15);
+            --c-accent: #FF90E8;
+            --c-accent-2: #C6F6FF;
+            --c-warn: #FFD24A;
+
+            --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+            --fs-body: 17px;
+            --lh-body: 1.6;
+
+            --sp-1: 4px;
+            --sp-2: 8px;
+            --sp-3: 12px;
+            --sp-4: 16px;
+            --sp-5: 20px;
+            --sp-6: 24px;
+            --sp-8: 32px;
+            --sp-10: 40px;
+            --sp-12: 48px;
+            --sp-16: 64px;
+            --sp-20: 80px;
+            --sp-24: 96px;
+
+            --r-sm: 10px;
+            --r-md: 14px;
+            --r-lg: 18px;
+            --r-xl: 24px;
+            --r-pill: 999px;
+
+            --b-1: 1px;
+            --shadow-soft: 0 1px 0 rgba(0,0,0,.06);
+            --shadow-hover: 0 10px 0 rgba(0,0,0,.10);
+
+            --t-fast: .14s;
+            --e-out: cubic-bezier(.2,.8,.2,1);
+
+            --container: 1160px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: var(--fs-body);
+            line-height: var(--lh-body);
+            color: var(--c-ink);
+            background: var(--c-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+        }
+
+        /* Navigation */
+        .nav {
+            height: 64px;
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(8px);
+            background: color-mix(in srgb, var(--c-bg) 92%, transparent);
+            border-bottom: var(--b-1) solid var(--c-border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--c-ink);
+        }
+
+        .logo span {
+            color: var(--c-accent);
+        }
+
+        .back-link {
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--c-ink);
+            transition: color var(--t-fast) var(--e-out);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-link:hover {
+            color: var(--c-accent);
+        }
+
+        /* Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 48px 16px;
+            }
+        }
+
+        h1 {
+            font-size: clamp(36px, 4vw, 56px);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .last-updated {
+            font-size: 14px;
+            color: var(--c-ink-2);
+            opacity: 0.7;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: var(--b-1) solid var(--c-border);
+        }
+
+        h2 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-top: 48px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: var(--c-ink-2);
+        }
+
+        ul, ol {
+            margin-bottom: 24px;
+            padding-left: 32px;
+            color: var(--c-ink-2);
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+
+        strong {
+            font-weight: 700;
+            color: var(--c-ink);
+        }
+
+        a {
+            color: var(--c-accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-section {
+            background: var(--c-surface);
+            border: var(--b-1) solid var(--c-border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-top: 48px;
+        }
+
+        .contact-section h2 {
+            margin-top: 0;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 18px;
+            color: var(--c-accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .email-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Consent Banner */
+        #consent-banner {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: var(--c-ink);
+            color: var(--c-bg);
+            padding: 24px;
+            display: none; /* Hidden by default, shown by JS */
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            z-index: 2000;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            flex-wrap: wrap;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #consent-banner p {
+            color: var(--c-bg);
+            opacity: 0.9;
+            margin: 0;
+            max-width: 600px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .consent-buttons {
+            display: flex;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+        #consent-banner .button--secondary {
+            background: #333;
+            color: #fff;
+            border-color: #444;
+        }
+        #consent-banner .button--secondary:hover {
+            background: #444;
+        }
+
+        #loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--c-accent);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.4s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="loading-bar"></div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <a href="index.html" class="logo">SKapi<span>.pro</span></a>
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="content">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last updated: January 19, 2026</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using SKapi.pro ("the Platform," "we," "us," or "our"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use our Platform.</p>
+            <p>These Terms constitute a legally binding agreement between you and SKapi.pro. We reserve the right to modify these Terms at any time, and your continued use of the Platform following any changes constitutes acceptance of the updated Terms.</p>
+
+            <h2>2. Description of Service</h2>
+            <p>SKapi.pro is an automation platform designed to work with Skool communities. Our services include:</p>
+            <ul>
+                <li>Workflow automation through integrations with platforms like Make.com and n8n</li>
+                <li>AI-powered comment generation and messaging</li>
+                <li>Member management and automation tools</li>
+                <li>Analytics and reporting features</li>
+            </ul>
+            <p>SKapi is an independent platform and is not affiliated with, endorsed by, or sponsored by Skool.</p>
+
+            <h2>3. Account Registration and Security</h2>
+            <h3>3.1 Account Creation</h3>
+            <p>To use certain features of the Platform, you must create an account. You agree to:</p>
+            <ul>
+                <li>Provide accurate, current, and complete information during registration</li>
+                <li>Maintain and update your account information</li>
+                <li>Accept responsibility for all activities that occur under your account</li>
+                <li>Notify us immediately of any unauthorized use of your account</li>
+            </ul>
+
+            <h3>3.2 Account Security</h3>
+            <p>You are responsible for maintaining the confidentiality of your account credentials. We are not liable for any loss or damage arising from your failure to protect your account information.</p>
+
+            <h2>4. Acceptable Use Policy</h2>
+            <p>You agree to use the Platform only for lawful purposes and in accordance with these Terms. You <strong>must not</strong>:</p>
+            <ul>
+                <li>Use the Platform to harass, abuse, or harm others</li>
+                <li>Send spam, unsolicited messages, or unwanted communications</li>
+                <li>Violate any applicable laws or regulations</li>
+                <li>Infringe on the intellectual property rights of others</li>
+                <li>Attempt to gain unauthorized access to our systems or networks</li>
+                <li>Use the Platform to distribute malware or malicious code</li>
+                <li>Interfere with or disrupt the Platform or servers connected to the Platform</li>
+                <li>Use automated tools to access the Platform excessively</li>
+            </ul>
+
+            <h2>5. Integration and Third-Party Services</h2>
+            <h3>5.1 Skool Integration</h3>
+            <p>The Platform integrates with Skool through custom API integration. You acknowledge that:</p>
+            <ul>
+                <li>SKapi is not affiliated with or endorsed by Skool</li>
+                <li>Your use of Skool is subject to Skool's own terms of service</li>
+                <li>We are not responsible for Skool's policies, practices, or service availability</li>
+            </ul>
+
+            <h3>5.2 Third-Party Integrations</h3>
+            <p>The Platform integrates with third-party services such as Make.com, n8n, and others. Your use of these integrations is subject to the third parties' terms of service and privacy policies. We make no warranties about these services.</p>
+
+            <h2>6. Intellectual Property Rights</h2>
+            <h3>6.1 Our Rights</h3>
+            <p>The Platform and its original content, features, and functionality are owned by SKapi.pro and are protected by international copyright, trademark, and other intellectual property laws.</p>
+
+            <h3>6.2 Your Rights</h3>
+            <p>You retain ownership of any content you submit to the Platform. By submitting content, you grant us a license to use, modify, and display it solely for the purpose of providing our services.</p>
+
+            <h3>6.3 Feedback</h3>
+            <p>If you provide feedback or suggestions about the Platform, we may use that feedback without obligation to compensate you.</p>
+
+            <h2>7. Privacy and Data Protection</h2>
+            <p>Your use of the Platform is also governed by our Privacy Policy, which describes how we collect, use, and protect your information. By using the Platform, you consent to our data practices.</p>
+
+            <h2>8. Paid Services and Billing</h2>
+            <h3>8.1 Fees and Payment</h3>
+            <p>Certain features of the Platform may require payment. You agree to:</p>
+            <ul>
+                <li>Pay all applicable fees for the services you use</li>
+                <li>Provide current, complete, and accurate payment information</li>
+                <li>Authorize us to charge your payment method for the selected service plan</li>
+            </ul>
+
+            <h3>8.2 Refunds</h3>
+            <p>Refunds are handled on a case-by-case basis. Please contact us if you believe you are entitled to a refund. We reserve the right to refuse refunds in certain circumstances.</p>
+
+            <h3>8.3 Subscription Renewal</h3>
+            <p>Subscription plans automatically renew unless cancelled before the renewal date. You may cancel your subscription at any time through your account settings.</p>
+
+            <h2>9. Termination</h2>
+            <h3>9.1 Termination by You</h3>
+            <p>You may terminate your account at any time by contacting us or using account deletion features if available.</p>
+
+            <h3>9.2 Termination by Us</h3>
+            <p>We reserve the right to suspend or terminate your account at any time for any reason, including but not limited to:</p>
+            <ul>
+                <li>Violation of these Terms</li>
+                <li>Suspicious or fraudulent activity</li>
+                <li>Extended period of inactivity</li>
+                <li>Discontinuation of the Platform or any part thereof</li>
+            </ul>
+
+            <h2>10. Disclaimers and Warranties</h2>
+            <p>THE PLATFORM IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO:</p>
+            <ul>
+                <li>MERCHANTABILITY</li>
+                <li>FITNESS FOR A PARTICULAR PURPOSE</li>
+                <li>NON-INFRINGEMENT</li>
+                <li>UNINTERRUPTED OR ERROR-FREE OPERATION</li>
+            </ul>
+
+            <h2>11. Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, SKAPI.PRO SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, OR GOODWILL, ARISING FROM OR RELATED TO YOUR USE OF THE PLATFORM.</p>
+            <p>Our total liability shall not exceed the amount you paid for the Platform in the twelve months preceding the claim.</p>
+
+            <h2>12. Indemnification</h2>
+            <p>You agree to indemnify and hold harmless SKapi.pro from any claims, damages, losses, liabilities, and expenses arising from:</p>
+            <ul>
+                <li>Your use of the Platform</li>
+                <li>Your violation of these Terms</li>
+                <li>Your violation of any third-party rights</li>
+            </ul>
+
+            <h2>13. Dispute Resolution</h2>
+            <h3>13.1 Governing Law</h3>
+            <p>These Terms are governed by the laws of the jurisdiction in which SKapi.pro is established, without regard to conflict of law principles.</p>
+
+            <h3>13.2 Arbitration</h3>
+            <p>Any disputes arising from these Terms shall be resolved through binding arbitration, except where prohibited by law.</p>
+
+            <h2>14. General Provisions</h2>
+            <h3>14.1 Entire Agreement</h3>
+            <p>These Terms constitute the entire agreement between you and SKapi.pro regarding the Platform.</p>
+
+            <h3>14.2 Waiver</h3>
+            <p>Our failure to enforce any right or provision of these Terms does not constitute a waiver of such right or provision.</p>
+
+            <h3>14.3 Severability</h3>
+            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force and effect.</p>
+
+            <h3>14.4 Assignment</h3>
+            <p>You may not assign these Terms without our prior written consent. We may assign these Terms freely.</p>
+
+            <h2>15. Changes to These Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. We will notify users of significant changes via email or through the Platform. Your continued use of the Platform after changes constitutes acceptance of the updated Terms.</p>
+
+            <div class="contact-section">
+                <h2>16. Contact Us</h2>
+                <p>If you have any questions about these Terms of Service, please contact us:</p>
+                <a href="mailto:connect@skapi.pro" class="email-link">
+                    <i class="fas fa-envelope"></i>
+                    connect@skapi.pro
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Consent Banner -->
+    <div id="consent-banner">
+        <p>We use cookies to analyze site performance and enhance your experience. By clicking “Accept”, you agree to our use of cookies for analytics.</p>
+        <div class="consent-buttons">
+            <button id="consent-accept" class="button button--primary">Accept</button>
+            <button id="consent-decline" class="button button--secondary">Decline</button>
+        </div>
+    </div>
+
+    <script src="main.js" defer></script>
+</body>
+</html>
