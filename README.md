@@ -10,6 +10,17 @@ Official landing page for SKapi.pro — the first automation platform for Skool 
 
 SKapi.pro provides a custom API that connects your Skool community to popular automation platforms like **Make.com** and **n8n**. Automate member management, AI-powered responses, bulk messaging, and more — all without coding.
 
+## Free Access Model
+
+**Get the browser extension for free by joining our Skool community.**
+
+The extension is completely free for all community members — no payment required. Simply join our Skool group and get immediate access to download the browser extension with real-time notifications and community management tools.
+
++ 🔓 **Free forever** for community members
++ 🎁 **Bonus features** exclusive to members
++ 🚀 **Early access** to new features and updates
++ 👥 **Community support** and automation tips
+
 > **Note:** SKapi is an independent API and is not affiliated with, endorsed by, or sponsored by Skool.
 
 ## Features
@@ -33,7 +44,7 @@ SKapi.pro provides a custom API that connects your Skool community to popular au
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/zaharenok/SKapi_landing_page.git
+git clone https://github.com/zaharenok/SKapi-extension.git
 ```
 
 2. Open `index.html` in your browser or serve with:
@@ -74,7 +85,7 @@ fbq('init', '3062462557296405');
 ## Project Structure
 
 ```
-SKapi_landing/
+SKapi-extension/
 ├── index.html          # Main landing page
 ├── privacy.html        # Privacy policy
 ├── terms.html          # Terms of service
